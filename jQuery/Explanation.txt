@@ -1,0 +1,61 @@
+jQuery:
+    --> It is a lightweight JS library for easily access dom elements and add action to It
+    --> Write less, do  more
+    --> Shortcut way to write JavaScript code.
+    -->Features: 
+        *DOM manipualation 
+        *Style manipualation
+        *Event listners
+        *Effects
+        *Animations
+        *Ajax(http req)
+        *much more
+
+Syntax:
+    $(selector).action()
+
+    $ - sign access jQuery
+    (selector) - define the element/s
+    action - () - Action we want to perform
+
+Selector:
+    Used to selct HTML ele for webpage
+        *Tag
+        *Class
+        *Id
+        *Attribute
+        *Attribute value
+
+Events in jQuery:
+    -->Mouse Event
+    -->Keyboard Event
+    -->Form Event
+    -->Document / Window Event
+
+Fade Effects:
+    -->fadeIn
+    -->fadeOut
+    -->fadeToggle
+    -->fadeTo
+
+Slide Effects:
+    -->slideUp
+    -->slideDown
+    -->slideToggle
+
+Animate in jQuery:
+
+    -->Animate method is used to create custom animations.
+    -->has all same property like other Effects
+    -->We have to pass object of CSS properties at the first argument
+
+Ajax in jQuery
+
+Ajax:
+    --> Asynchronous JavaScript and XML
+    --> loading data in background and display it on the webpage, without reloading the whole page
+
+Methods Ajax in jQuery:
+    --> load() - used to  load data from server in HTML element
+    --> get() - used to load data from the server using HTTP get req
+    --> post() - used to send and load data from the server using HTTP post req

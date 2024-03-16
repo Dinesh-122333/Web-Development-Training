@@ -1,0 +1,106 @@
+MongoDB:
+    --> uses Collection & Document
+    --> it stores in JSON key value pair but actually stored as BSON 
+    --> Every Document has unique id to identify them
+    --> property can has nest property too
+
+Using in shell
+
+C:\Users\DINESH>mongosh
+Current Mongosh Log ID: 65f557de1d48bb51c2445548
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.0.1
+Using MongoDB:          7.0.6
+Using Mongosh:          2.0.1
+mongosh 2.2.0 is available for download: https://www.mongodb.com/try/download/shell
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-03-16T10:30:04.276+05:30: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+
+test> show dbs
+admin        40.00 KiB
+bookstore    72.00 KiB
+chat        236.00 KiB
+config      108.00 KiB
+demo-mongo   16.00 KiB
+local        88.00 KiB
+test> use bookstore // its which test is default one and we can switch
+switched to db bookstore
+bookstore> use test
+switched to db test
+test>
+
+Accessing the DB in shell:
+
+    test> use bookstore
+    switched to db bookstore
+    bookstore> show collection
+    MongoshInvalidInputError: [COMMON-10001] 'collection' is not a valid argument for "show".
+    bookstore> show collections
+    books
+    bookstore> var name = 'yash'
+
+    bookstore> name
+    yash
+    bookstore> name = 'kala'
+    kala
+    bookstore> exit
+
+Adding the ele in DB:
+
+    test> use bookstore
+    switched to db bookstore
+    bookstore> db
+    bookstore
+    bookstore> db.books
+    bookstore.books
+    bookstore> db.booksinsertOne({title:" Narniya", author: "mahe", pages: 300, rating:7, genere:["Fantasy", "Magic"]})
+    TypeError: db.booksinsertOne is not a function
+    bookstore> db.books.insertOne({title:" Narniya", author: "mahe", pages: 300, rating:7, genere:["Fantasy", "Magic"]})
+    {
+    acknowledged: true,
+    insertedId: ObjectId("65f55a8bab5b405e52b810a4")
+    }
+    bookstore>
+
+    bookstore> db.author.insertOne({name: "larry", age :25}) it can be added if no attribute is present in DB
+    {
+    acknowledged: true,
+    insertedId: ObjectId("65f55b1fab5b405e52b810a5")
+    }
+
+    -->.insertMany([...])  //can add multiple value
+
+Finding Document:
+    bookstore> db.book.find()
+
+    bookstore> db.books.find() // print first 20 elements
+    [
+    {
+        _id: ObjectId("65f5565bc43bc742f33d9480"),
+        title: 'Avatar',
+        author: 'Yean',
+        pages: 500,
+        genres: [ 'fantasy', 'magical' ],
+        rating: 9
+    },
+    {
+        _id: ObjectId("65f556e9c43bc742f33d9482"),
+        title: 'Naruto',
+        author: 'kishimoto',
+        page: 2500,
+        genere: [ 'Anime' ],
+        rating: 7
+    },
+    {
+        _id: ObjectId("65f55a8bab5b405e52b810a4"),
+        title: ' Narniya',
+        author: 'mahe',
+        pages: 300,
+        rating: 7,
+        genere: [ 'Fantasy', 'Magic' ]
+    }
+    ]

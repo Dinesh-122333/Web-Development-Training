@@ -1,0 +1,10 @@
+GO :
+    --> Extremly fast
+    --> Mixed of Python and C
+    --> Used for Web Development as a Backend Server
+
+Checking of go version:
+    >go version
+
+Links:
+    Documentation

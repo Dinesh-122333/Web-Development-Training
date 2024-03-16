@@ -1,0 +1,179 @@
+Redis:
+     --> Redis is an in-mem data store
+     --> Uses key value structure
+     --> Traditionally usedd as a caching layer
+     --> Data stored in RAM(very fast)
+     --> It lossess data when server crash or logging off
+     --> In redis it take all as String
+Connection:
+              ___Redis Cloud___
+    API ----> __Redis Database__
+            *Data persistance
+            *JSON support
+            *Search
+            *Redis OM - obj mapping
+
+Data Type:
+
+        Key value pair:
+                1)String
+                2)set
+                3)Hashes/ dict
+                4)List
+                5)Sorted Sets
+
+installing the redis software:
+    https://github.com/MicrosoftArchive/redis/releases
+
+installing redis client 
+    https://github.com/predis/predis
+
+String:
+    127.0.0.1:6379> set dinesh 11
+    OK
+    127.0.0.1:6379> get dinesh (geting the keys value)
+    "11"
+    127.0.0.1:6379> get nil 
+    (nil)
+    127.0.0.1:6379> set age 23
+    OK
+    127.0.0.1:6379> del age (deleting the keys value)
+    (integer) 1
+    127.0.0.1:6379> get age
+    (nil)
+    127.0.0.1:6379> exists age(check if keys value exists or not)
+    (integer) 0
+    127.0.0.1:6379> key * (give all key value)
+    (error) ERR unknown command 'key'
+    127.0.0.1:6379> keys *
+    1) "dinesh"
+    127.0.0.1:6379> flushall(remove all)
+    OK
+    127.0.0.1:6379> keys*
+    (error) ERR unknown command 'keys*'
+    127.0.0.1:6379> keys *
+    (empty list or set)
+    127.0.0.1:6379> get age
+    (nil)
+
+Handling Expirations:
+    127.0.0.1:6379> ttl name
+    (integer) -2
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379>
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> expire name 10
+    (integer) 0
+    127.0.0.1:6379> get name
+    (nil)
+    127.0.0.1:6379> expire name 15
+    (integer) 0
+    127.0.0.1:6379>
+    127.0.0.1:6379> expire name 15
+    (integer) 0
+    127.0.0.1:6379> expire name 15
+    (integer) 0
+    127.0.0.1:6379> expire name 15
+    (integer) 0
+    127.0.0.1:6379> setex name 10 dinesh
+    OK
+    127.0.0.1:6379> ttl name
+    (integer) -2
+    127.0.0.1:6379> get name
+    (nil)
+    127.0.0.1:6379> setex name 10 dinesh
+    OK
+    127.0.0.1:6379> ttl name
+    (integer) 8
+    127.0.0.1:6379> ttl name
+    (integer) 6
+    127.0.0.1:6379> ttl name
+    (integer) 6
+    127.0.0.1:6379> ttl name
+    (integer) 5
+    127.0.0.1:6379> ttl name
+    (integer) 3
+    127.0.0.1:6379> ttl name
+    (integer) 1
+    127.0.0.1:6379> ttl name
+    (integer) -2
+    127.0.0.1:6379> get name
+    (nil)
+
+List:
+    127.0.0.1:6379> lpush friensds john (adding john in left)
+    (integer) 1
+    127.0.0.1:6379> get friends(because its not string)
+    (nil)
+    127.0.0.1:6379> get friensds
+    (error) WRONGTYPE Operation against a key holding the wrong kind of value
+    127.0.0.1:6379> lrange friensds 0 -1(range function)
+    1) "john"
+    127.0.0.1:6379> lpush friensds dinesh
+    (integer) 2
+    127.0.0.1:6379> lrange friensds 0 -1
+    1) "dinesh"
+    2) "john"
+    127.0.0.1:6379> rpush friensds dharani(adding right)
+    (integer) 3
+    127.0.0.1:6379> lrange friensds 0 -1
+    1) "dinesh"
+    2) "john"
+    3) "dharani"
+    127.0.0.1:6379> rpop friensds(poping on right)
+    "dharani"
+    127.0.0.1:6379> lpop friensds(poping on left)
+    "dinesh"
+    127.0.0.1:6379> lrange friensds 0 -1
+    1) "john"
+    127.0.0.1:6379>
+
+Sets:
+    127.0.0.1:6379> sadd hobbies "weight lifting"
+    (integer) 1
+    127.0.0.1:6379> smemebers
+    (error) ERR unknown command 'smemebers'
+    127.0.0.1:6379> smembers
+    (error) ERR wrong number of arguments for 'smembers' command
+    127.0.0.1:6379> smembers hobbies
+    1) "weight lifting"
+    127.0.0.1:6379> sadd hobbies "weight lifting"
+    (integer) 0
+    127.0.0.1:6379> smembers hobbies
+    1) "weight lifting"
+    127.0.0.1:6379> srem hobbies"weight lifting"
+    (error) ERR wrong number of arguments for 'srem' command
+    127.0.0.1:6379> srem hobbies "weight lifting"
+    (integer) 1
+    127.0.0.1:6379>
+    127.0.0.1:6379> smembers hobbies
+    (empty list or set)
+    127.0.0.1:6379>
+
+Hashing:
+    127.0.0.1:6379> hset person name dinesh
+    (integer) 1
+    127.0.0.1:6379> hget person name
+    "dinesh"
+    127.0.0.1:6379> hgetall person
+    1) "name"
+    2) "dinesh"
+    127.0.0.1:6379> hset person age 26
+    (integer) 1
+    127.0.0.1:6379> hgetall person
+    1) "name"
+    2) "dinesh"
+    3) "age"
+    4) "26"
+    127.0.0.1:6379> hdel person age
+    (integer) 1

@@ -1,0 +1,38 @@
+TypeScript:
+    -->its is a programming lang created by Microsoft to address shortcomings of JS
+    ex:
+    brother or sister of JS, where a discipline one
+    --> TypeScript build top of the JavaScript
+    --> Static type language
+    ex :
+        int num = 10; where num is integer where 
+    --> JavaScript with TypeChecking
+    --> Where i run the typescript code i got a JavaScript file which change to JavaScript code on it. 
+Drawbacks:
+    --> Compilation (where it not runs directly in browser where as it runs in compiler to change into JS and
+    this process is called tranpilation)
+    --> Discipline in codding
+
+installing of TypeScript:
+    >npm i -g typescript(Node Packet Manager, install, globally, ...)
+    .tsc -v(to check Version)
+    Version 5.4.2
+
+Running of typescript:
+    >tsc index.ts 
+
+Configuration file:
+    >tsc --init
+    inside the config file
+    update and uncomment these
+    >"noEmitOnError": true,   
+    >"rootDir": "./src", 
+    >"outDir": "./dist",                                   /* Specify an output folder for all emitted files. */
+    >"removeComments": true,
+
+Built-in type
+    1)any
+    2)unknown
+    3)never
+    4)enum
+    5)tuple
