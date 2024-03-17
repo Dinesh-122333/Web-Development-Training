@@ -2,9 +2,33 @@ GO :
     --> Extremly fast
     --> Mixed of Python and C
     --> Used for Web Development as a Backend Server
+    --> Statically Typed Language
+    --> Strongly Typed Language
+    --> GO is Compiled
+    --> Fast Complile time
+    --> Built in Concurrency
+    --> Simplicity
 
 Checking of go version:
     >go version
 
 Links:
-    Documentation
+    Documentation -- https://go.dev/doc/
+    Packages -- https://pkg.go.dev/
+
+Workspace:
+
+    go(Workspace)
+        -bin
+        -src
+            -github.com`
+                bradtraversy
+                    -go_project_1
+                        #project files
+                    -go_project_2
+                        #project files
+                    ...
+        -pkg
+
+fmt - 
+    formating string and print msg to console 

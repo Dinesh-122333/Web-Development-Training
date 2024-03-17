@@ -1,0 +1,9 @@
+Before Dockers:
+        --> One application runs on the server
+        --> For new or more application so they need to buy the required server
+        --> Then Virtual Machine runs in same server finded by VMware
+        --> If a application is shared there would might be a version problem like, 
+        it can be a lower or higher version 
+
+Dockers:
+    
