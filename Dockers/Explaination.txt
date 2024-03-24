@@ -5,5 +5,36 @@ Before Dockers:
         --> If a application is shared there would might be a version problem like, 
         it can be a lower or higher version 
 
+Container:
+        --> Dockers made popular
+        --> No need of entirely new OS to use it
+        --> In reality Container runs top of Virtual Machine
+        --> Linux Container are more popular
+        --> Running instance of the image
+
+Installation:
+        Windows: Dockers Desktop + Windows SubSystem
+        Mac: VM and Dockers Desktop
+        Linux: As itself
+
+Links:
+        Documentation - https://docs.docker.com/
+
 Dockers:
-    
+    --> Container Platform - to deploy, test and build application quicly
+    --> Run time - allows us to start and stop Containers
+        *runc (low level runtime)
+        *containerd (manage the containers)
+    --> Engine (Daemon)
+        *communication b/w docker and ubuntu
+
+Image:
+        its just a file which contains all the instructions and everything
+
+Docker file(list of instructions ) --> Image(class) -->  containers(object)
+
+DevOps:
+
+        *Dev - create your own application, docker file, img, containers
+        *Ops - Download the image, runing the image, operating the image
+

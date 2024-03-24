@@ -1,0 +1,71 @@
+Async JS:
+    --> govern how we peform tasks which take some time to complete(getting data from database)
+    --> in keywords "Start something  now and finish it later"
+    --> breaking down the bigger projects into smaller and then using any of these three methods 
+    either callback, promises or async await
+    --> it is multi threaded statement
+        which means it runs by it runs by there own 
+        ex:
+        if a runing race occurs there are three or more members according to them they has seperate
+        lane where they don't need to wait for others to finish the race 
+Sync JS:
+    --> runs one at a time
+        eg:
+            console.log('first') //1
+            console.log('second') //2
+            console.log('third') //3
+
+    --> single threaded statement
+    crux of synchronous statement:
+        One statement being executed at a time after one another
+
+Async HTTP request:
+
+HTTP request:
+    --> get data from another server
+    --> we make these request to API endpoints
+
+Callback:
+    nest a function inside another function as an argument that's called 
+
+Callback hell:
+    Callback Hell is essentially nested callbacks stacked below one another 
+    forming a pyramid structure
+
+Promises:
+    --> the update version of callback 
+    --> it gives instruction like first to this and next this, and so on...
+
+
+                                        Promises
+                                            |
+                                            |
+                                -------------------------
+                                |                       |
+                            Resolve                     Reject
+                                |                       |
+                            .then                       |   
+                                |                       |
+                            .then                       .catch
+                                |                       |
+                                ---------       ---------        
+                                        |       |
+                                        .finally
+    --> to understand 
+        * relation b/w time and work
+        * promise chaining
+        * error handling
+        * the .finally handler
+
+Await / Async :
+    To understand:
+        -- try and catch keywords
+        -- use of await keywords
+
+await:
+    Await is used to wait for the promise. It could be used within the async block only.
+    It makes the code wait until the promise returns a result.
+
+async:
+    The Async function simply allows us to write promises-based code as if it were 
+    synchronous and it checks that we are not breaking the execution thread.

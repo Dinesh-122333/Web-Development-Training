@@ -5,11 +5,7 @@ try {
     Predis\Autoloader::register(); // Corrected the syntax for registering the autoloader
 
     // Create a new instance of the Predis Client with appropriate connection details
-    $redis = new Predis\Client(array(
-        'scheme' => 'tcp',
-        'host'   => '127.0.0.1', // Provide your Redis server host IP here
-        'port'   => 6379, // Provide your Redis server port here
-    ));
+    $redis = new Predis\Client();
 
     $redis->set("count", 1);
     $redis->incr("count");

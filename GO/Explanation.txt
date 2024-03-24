@@ -30,5 +30,29 @@ Workspace:
                     ...
         -pkg
 
+Variable types divided into two different group:
+
+Group A:
+    -->Strings
+    -->Integer
+    -->Floats
+    -->Booleans
+    -->Array
+    -->Struct
+
+Group B:
+    -->Slices
+    -->Maps
+    -->Function
+
 fmt - 
     formating string and print msg to console 
+
+If a two file where main file and another file to called:
+    >go run main.go file.go
+    ex:
+        main.go and greet.go
+
+Pass By Value:
+    --> GO is a pass-by-value language 
+    --> GO makes "copies" of values when passed into function
