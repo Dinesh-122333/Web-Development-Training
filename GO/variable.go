@@ -4,23 +4,23 @@ import "fmt"
 
 func main(){
 	// strings
-	// var nameOne string = "dinesh"
-	// var nameTwo string = "Gara"
-	// var nameThree string
+	var nameOne string = "dinesh"
+	var nameTwo string = "Gara"
+	var nameThree string
 	
-	// fmt.Println(nameOne, nameTwo, nameThree)
-	// nameOne = "Naruto"
-	// nameThree = "Sasuke"
-	// fmt.Println(nameOne, nameTwo, nameThree)
-	// nameFour := "Tanjiro"// shorthand for above declarations
-	// fmt.Print(nameFour, nameThree)
-	// fmt.Println()
+	fmt.Println(nameOne, nameTwo, nameThree)
+	nameOne = "Naruto"
+	nameThree = "Sasuke"
+	fmt.Println(nameOne, nameTwo, nameThree)
+	nameFour := "Tanjiro"// shorthand for above declarations
+	fmt.Print(nameFour, nameThree)
+	fmt.Println()
 
-	// // integers
-	// var ageOne int = 21
-	// var ageTwo = 22
-	// age := 31
-	// fmt.Println(ageOne, ageTwo , age)
+	// integers
+	var ageOne int = 21
+	var ageTwo = 22
+	age := 31
+	fmt.Println(ageOne, ageTwo , age)
 
 	// Bits & Memory
 	var num int8 = 25 // it will see it range where 8 range to -128 to 127
